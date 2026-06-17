@@ -1,0 +1,22 @@
+name: Run Prime Program
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-prime:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run Prime Program
+        run: python prime.py
